@@ -2,6 +2,4 @@
 
 ### Technologies Used
 * Rasa
-
-### Functionality
-*
+* Weather API
