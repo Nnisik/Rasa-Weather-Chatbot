@@ -3,28 +3,55 @@ version: "3.1"
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - ask_weather
+  - ask_weather_location
+  - ask_temperature
 
-responses:
+slots:
+  location:
+    type: text
+
+actions: 
+  - utter_greet
+  - utter_goodbye
+  - utter_ask_location
+  - utter_did_that_help
+  - action_weather
+  - utter_default
+
+entities:
+  - location
+
+templates:
   utter_greet:
   - text: "Hey! How are you?"
+  - text: "Hi! How are you?"
+  - text: "Hello"
+  - text: "Hi!"
+  - text: "Hey!"
+
+  utter_goodbye:
+  - text: "Bye"
+  - text: "See you soon"
+  - text: "See you later"
+
+  utter_ask_location:
+  - text: "In what location?"
+  - text: "Which area?"
+  - text: "In which city are you interested in?"
+  - text: "What city would you like to get to know the weather forecast for?"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+  - text: "Was that helpful?"
+  - text: "Is this what you searched for?"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
     image: "https://i.imgur.com/nGF1K8f.jpg"
 
-  utter_did_that_help:
-  - text: "Did that help you?"
-
   utter_happy:
   - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
